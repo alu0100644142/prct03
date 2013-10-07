@@ -1,0 +1,416 @@
+18. ¿Qué signiﬁcado tiene la salida? (puts ’Hola Mundo’)
+
+Muestra por pantalla el texto entre comillas e inserta un fin de línea al final
+
+
+21. ¿Qué diferencia hay entre "\t\n" y '\t\n'?
+
+Con comillas simples el intérprete simplemente ve la cadena como algo textual y con comilla dobles busca alguna orden.
+
+
+22. ¿Cómo funciona %q? ¿Qué es %q{hello world\n}? ¿Qué es %q{’a’ ’b’ ’c’}?
+
+%q es una variable, %q{hello world\n} le añade el valor "hello world\n" a la variable y %q{’a’ ’b’ ’c’} es un array.
+
+
+23. ¿Cómo funciona %Q? ¿Qué es %Q{hello world\n}? ¿Qué es %Q{"a" "b" "c"}?
+
+A diferencia del anterior caso añade el valor con entrecomillado doble.
+
+
+24. ¿Qué queda en c?
+
+"--4--\n--2--\n"
+
+
+25. ¿Qué queda en c?
+
+"--\#{a}--\n--\#{b}--\n"
+
+
+26. s = "hello". ¿Cuál es el valor de las siguientes expresiones?
+
+s[0,2] >> "he"
+
+s[-1,1] >> "o"
+
+s[0,10] >> "hello"
+
+
+27. ¿Qué queda en g?
+
+"helloworld"
+
+
+28. ¿Qué queda en e?
+
+"..."
+
+29. ¿Cuál es el resultado?
+
+"2 2 2 "
+
+
+30. ¿Qué es esto? %w[this is a test]
+
+Interpreta el espacio como un marcador de inicio para un nuevo valor.
+
+
+31. ¿Qué es esto? %w[\t \n]
+
+Tiene el mismo comportamiento que en el anterior comando, las variables son añadidas con ''.
+
+
+32. ¿Qué es esto? %W[\t \n]
+
+Lo mismo que en la pregunta 31 pero en este caso los valores son añadidos con "".
+
+
+33. ¿Qué contiene nils? nils = Array.new(3)
+
+Crea un array de tres valores pero nulos.
+
+
+34. ¿Qué contiene zeros? zeros = Array.new(3, 0)
+
+En este caso los valores son inicializados al valor 0.
+
+
+35. ¿Qué queda en b?
+
+[[1, 2], [3, 4]]
+
+
+36. ¿Qué queda en c?
+
+[0, 2, 4]
+
+
+37. ¿Cuál es el resultado de cada una de estas operaciones?
+
+>> a = (’a’..’e’).to_a
+=> ["a", "b", "c", "d", "e"]
+
+>> a[1,1]
+=> ["b"]
+
+>> a[-2,2]
+=> ["d", "e"]
+
+>> a[0..2]
+=> ["a", "b", "c"]
+
+>> a[0...1]
+=> ["a"]
+
+>> a[-2..-1]
+=> ["d", "e"]
+
+
+38. ¿Cuál es el resultado de cada una de estas operaciones?
+
+>> a
+=> ["a", "b", "c", "d", "e"]
+
+>> a[0,2] = %w{A B}
+=> ["A", "B"]
+
+>> a
+=> ["A", "B", "c", "d", "e"]
+
+>> a[2..5] = %w{C D E}
+=> ["C", "D", "E"]
+
+>> a
+=> ["A", "B", "C", "D", "E"]
+
+>> a[0,0] = [1,2,3]
+=> [1, 2, 3]
+
+>> a
+=> [1, 2, 3, "A", "B", "C", "D", "E"]
+
+>> a[0,2] = []
+=> []
+
+>> a
+=> [3, "A", "B", "C", "D", "E"]
+
+>> a[-1,1] = [ 'Z' ]
+=> ["Z"]
+
+>> a
+=> [3, "A", "B", "C", "D", "Z"]
+
+>> a[-2,2] = nil
+=> nil
+
+>> a
+=> [3, "A", "B", "C"]
+
+
+39. ¿Cuál es el resultado de cada una de estas operaciones?
+
+>> a = (1...4).to_a
+=> [1, 2, 3]
+
+>> a = a + [4, 5]
+=> [1, 2, 3, 4, 5]
+
+>> a += [[6, 7, 8]]
+=> [1, 2, 3, 4, 5, [6, 7, 8]]
+
+>> a = a + 9
+=> TypeError: can't convert Fixnum into Array
+
+
+40. ¿Cuál es el resultado de cada una de estas operaciones?
+
+>> x = %w{a b c b a}
+=> ["a", "b", "c", "b", "a"]
+
+>> x = x - %w{b c d}
+=> ["a", "a"]
+
+
+41. ¿Cuál es el resultado de cada una de estas operaciones?
+
+>> z = [0]*8
+=> [0, 0, 0, 0, 0, 0, 0, 0]
+
+
+42. ¿Cuál es el resultado de cada una de estas operaciones?
+
+>> a = []
+=> []
+
+>> a << 1
+=> [1]
+
+>> a << 2 << 3
+=> [1, 2, 3]
+
+>> a << [4, 5, 6]
+=> [1, 2, 3, [4, 5, 6]]
+
+>> a.concat [7, 8]
+=> [1, 2, 3, [4, 5, 6], 7, 8]
+
+
+43. ¿Cuál es el resultado de cada una de estas operaciones?
+
+>> a = [1, 1, 2, 2, 3, 3, 4]
+=> [1, 1, 2, 2, 3, 3, 4]
+
+>> b = [5, 5, 4, 4, 3, 3, 2]
+=> [5, 5, 4, 4, 3, 3, 2]
+
+>> c = a | b
+=> [1, 2, 3, 4, 5]
+
+>> d = b | a
+=> [5, 4, 3, 2, 1]
+
+>> e = a & b
+=> [2, 3, 4]
+
+>> f = b & a
+=> [4, 3, 2]
+
+
+44. ¿Qué resultados dan las siguientes operaciones?
+
+>> a = 1..10
+=> 1..10
+
+>> a.class
+=> Range
+
+>> a.to_a
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+>> b = 1...10
+=> 1....10
+
+>> b.to_a
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>> b.include? 10
+=> false
+
+>> b.include? 8
+=> true
+
+>> b.step(2) {|x| print "#{x} " }
+=> 1 3 5 7 9 => 1...10
+
+>> 1..3.to_a
+=> ArgumentError: bad value for range
+
+
+45. ¿Qué resultados dan las siguientes operaciones?
+
+>> r = 0...100
+=> 0....100
+
+>> r.member? 50
+=> true
+
+>> r.include? 99.9
+=> true
+
+>> r.member? 99.9
+=> true
+
+
+46. ¿Qué resultados dan las siguientes operaciones?
+
+>> true.class
+=> TrueClass
+
+>> false.class
+=> FalseClass
+
+>> puts "hello" if 0
+=> hello => nil
+
+>> puts "hello" if nil
+=> nil
+
+>> puts "hello" if ""
+=> (irb):5: warning: string literal in condition hello nil
+
+
+47. ¿Qué resultados dan las siguientes operaciones?
+
+>> x = :sym
+=> :sym
+
+>> x.class
+=> Symbol
+
+>> x == 'sym'
+=> false
+
+>> x == :sym
+=> true
+
+>> z = :'a long symbol'
+=> :"a long symbol"
+
+>> z.class
+=> Symbol
+
+>> x == 'sym'.to_sym
+=> true
+
+>> x.to_s == 'sym'
+=> true
+
+
+48. ¿Qué resultados se dan?
+
+>> s = "Ruby"
+=> "Ruby"
+
+5>> t = s
+=> "Ruby"
+
+>> t[-1] = ""
+=> ""
+
+>> print s
+=> Rub=> nil
+
+>> t = "Java"
+=> "Java"
+
+>> print s, t
+=> RubJava=> nil
+
+
+49. ¿Cuál es el resultado?
+
+>> "%d %s" % [3, "rubies"]
+=> "3 rubies"
+
+50. ¿Cuáles son los resultados?
+
+>> x, y = 4, 5
+=>
+
+>> z = x > y ? x : y
+=>
+
+>> x,y,z = [1,2,3]
+=>
+
+
+51. ¿Qué resultados dan las siguientes operaciones?
+
+>> x = { :a => 1, :b => 2 }
+=> {:b=>2, :a=>1}
+
+>> x.keys
+=> [:b, :a]
+
+>> x.values
+=> [2, 1]
+
+>> x[:c] = 3
+=> 3
+
+>> x
+=> {:b=>2, :c=>3, :a=>1}
+
+>> x.delete('a')
+=> nil
+
+>> x
+=> {:b=>2, :c=>3, :a=>1}
+
+>> x.delete(:a)
+=> 1
+
+>> x
+=> {:b=>2, :c=>3}
+
+>> x = { :a => 1, :b => 2, :c => 4 }
+=> {:b=>2, :c=>4, :a=>1}
+
+>> x.delete_if { |k,v| v % 2 == 0 }
+=> {:a=>1}
+
+>> x
+=> {:a=>1}
+
+
+52. ¿Qué hace yield 4, 5?
+
+=>
+
+
+53. ¿Qué hace la siguiente sentencia?
+
+counts = Hash.new(0)
+=> Sirve para inicializar bloques
+
+
+¿Qué diferencia hay con la asignación counts = {}?
+
+=> Que en el anterior caso la asignación se hace en la hash de ruby
+
+
+54. ¿Qué retorna esta expresión?
+
+'hello world, hello LPP'.scan /\w+/
+=> ["hello", "world", "hello", "LPP"]
+
+
+55. Explique que hacen estas sentencias:
+
+c = { :a => 3, :b => 2, :c => 1 }
+=> Crea una vaiable c con el contenido asignado
+
+c.keys.sort.each { |k| puts c[k] }
+=> Ordena los valores del contenido de la variable c
